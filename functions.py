@@ -1,4 +1,4 @@
-def show_options():
+def mostrar_menu():
     print("Selecione uma das opções")
     print("1 - Cadastrar ONG")
     print("2 - Cadastrar Usuario")
@@ -11,9 +11,9 @@ def show_options():
     except ValueError:
         print("Digite um opção válida")
 
-def get_email(email):
+def get_email(mensagem):
     while True:
-            email = input("Digite o seu email: ")
+            email = input(mensagem)
             if(email.__contains__("@") and email.__contains__(".com")):
                   return email
 
