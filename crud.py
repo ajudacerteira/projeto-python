@@ -1,7 +1,6 @@
 from functions import get_int, get_email, get_data
 from models import ONG, Usuario, Evento
 
-# Create
 def create_ong():
     id = get_int("Digite o ID da ONG: ")
     nome = input("Digite o nome da ONG: ")
@@ -43,3 +42,19 @@ def listar_usuario(usuario):
 def listar_usuarios(usuarios):
     for usuario in usuarios.items():
         listar_usuario(usuario)
+    
+def get_ong(ongs):
+    print("Digite o ID da ONG criadora do Evento: ")
+    listar_ongs()
+    id = get_int()
+    for ong in ongs.items():
+        if(ong.id == id):
+            return ong
+
+def get_ong(usuarios):
+    print("Digite o ID da Usuario que deseja adicionar: ")
+    listar_usuarios()
+    id = get_int()
+    for usuario in usuarios.items():
+        if(usuario.id == id):
+            return usuario
