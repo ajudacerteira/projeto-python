@@ -1,3 +1,4 @@
+# Classe ONG 
 class ONG:
     def __init__(self, id, nome, email, descricao):
         self.id = id
@@ -5,7 +6,7 @@ class ONG:
         self.email = email
         self.descricao = descricao
     
-
+# Classe Usuario
 class Usuario: 
     def __init__(self, id, nome, email, idade):
         self.id = id
@@ -13,6 +14,7 @@ class Usuario:
         self.email = email
         self.idade = idade
 
+# Classe Evento -> Tem uma ONG e uma lista de Usuarios como Atributo
 class Evento:
     def __init__(self, id, nome, ong, endereco, horario, data):
         self.id = id

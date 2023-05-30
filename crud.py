@@ -1,6 +1,9 @@
 from functions import get_int, get_email, get_data
 from models import ONG, Usuario, Evento
 
+# FUNÇÕES DE CRIAÇÃO:
+
+# Função para criar uma ONG
 def create_ong():
     id = get_int("\nDigite o ID da ONG: ")
     nome = input("Digite o nome da ONG: ")
@@ -9,6 +12,7 @@ def create_ong():
     ong = ONG(id, nome, email, descricao)
     return ong 
 
+# Função para criar um Usuario
 def create_usuario():
     id = get_int("\nDigite o ID do Usuario: ")
     nome = input("Digite o nome do Usuario: ")
@@ -17,6 +21,7 @@ def create_usuario():
     usuario = Usuario(id, nome, email, idade)
     return usuario
 
+# Função para criar um Evento (lista de usuarios começa vazia)
 def create_evento(ong):
     id = get_int("\nDigite o ID do Evento: ")
     nome = input("Digite o nome do Evento: ")
@@ -26,8 +31,7 @@ def create_evento(ong):
     evento = Evento(id, nome, ong, endereco, horario, data)
     return evento
 
-def adicionar_usuario(usuario, evento):
-    evento.usuarios.append(usuario)
+# FUNÇÕES PARA LISTAR INFORMAÇÕES DE UMA INTANCIA:
 
 def listar_ong(ong):
     print(f"ONG -> {ong.id} | Nome: {ong.nome} | Email: {ong.email} | Descricao: {ong.descricao}")
@@ -39,6 +43,8 @@ def listar_evento(evento):
     print(f"EVENTO -> {evento.id} | Nome: {evento.nome} | ONG: {evento.ong.nome} | Endereco: {evento.endereco} | Horario: {evento.horario} | Data: {evento.data}") 
     for usuario in evento.usuarios:
         listar_usuario(usuario)    
+
+# FUNÇÕES PARA LISTAR INFOMAÇÕES DE VARIAS INSTÂNCIAS: 
 
 def listar_ongs(ongs):
     print("")
@@ -55,22 +61,27 @@ def listar_eventos(eventos):
     for evento_id, evento in eventos.items():
         listar_evento(evento)
 
+# FUNÇÕES QUE RETORNAM UMA INSTANCIA ESPECIFICA EM DICIONARIO
+
+# Lista Ongs -> Pede para Digitar ID de ONG -> Retorna tal ONG
 def get_ong(ongs):
-    print("\nDigite o ID da ONG criadora do Evento: ")
+    print("\n Confira todas as ONGS cadastradas: ")
     listar_ongs(ongs)
-    id = get_int("")
+    id = get_int("Digite o ID da ONG escolhida: ")
     for ong_id, ong in ongs.items():
         if(ong.id == id):
             return ong
 
+# Lista Usuarios -> Pede para Digitar ID de Usuario -> Retorna tal Usuario
 def get_usuario(usuarios):
-    print("\nDigite o ID do Usuario que deseja adicionar: ")
+    print("\nConfira todos os Usuarios cadastrados: ")
     listar_usuarios(usuarios)
-    id = get_int("")
+    id = get_int("Digite o ID do Usuario escolhido: ")
     for usuario_id, usuario in usuarios.items():
         if(usuario.id == id):
             return usuario
 
+# Lista Eventos -> Pede para Digitar ID de Evento -> Retorna tal Evento
 def get_evento(eventos):
     print("\nDigite o ID do Evento que deseja adicionar o Usuario: ")
     listar_eventos(eventos)
