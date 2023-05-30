@@ -10,4 +10,9 @@ def create_ong():
     return ong 
 
 def create_usuario():
-    id 
+    id = get_int("Digite o ID do Usuario: ")
+    nome = input("Digite o nome do Usuario: ")
+    email = get_email("Digite o email do Usuario: ")
+    idade = get_int("Digite a idade do Usuario: ")
+    usuario = Usuario(id, nome, email, idade)
+    return usuario
