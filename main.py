@@ -14,10 +14,16 @@ while True:
         usuario = create_usuario()
         usuarios[usuario.id] = usuario
     elif opcao == 3: # Criar Evento
+        if len(ongs) == 0:
+            print("\n(Você precisa criar pelo menos 1 ONG antes)")
+            continue
         ong = get_ong(ongs)
         evento = create_evento(ong)
         eventos[evento.id] = evento
     elif opcao == 4: # Adicionar Usuario em Evento
+        if len(eventos) == 0 or len(usuarios) == 0:
+            print("\n(Você precisa criar pelo menos 1 evento e 1 usuario antes)")
+            continue
         evento = get_evento(eventos)
         usuario = get_usuario(usuarios)
         evento.usuarios.append(usuario)
