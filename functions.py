@@ -23,7 +23,7 @@ def get_email(mensagem):
 def get_int(mensagem):
     while True:
         try:
-            value = input(mensagem)
+            value = get_string(mensagem)
             value = int(value)
             return value
         except ValueError:
