@@ -17,13 +17,6 @@ def get_email(mensagem):
         if(email.__contains__("@") and email.__contains__(".com")):
             return email
 
-def get_idade(mensagem):
-    while True:
-        idade = get_int()
-        if(idade > 12 and idade < 110):
-            print("Digite uma idade valida")
-            continue
-        return idade
          
 
 def get_int(mensagem):
@@ -34,3 +27,30 @@ def get_int(mensagem):
             return value
         except ValueError:
             print("Digite um número inteiro")
+
+def get_idade(mensagem):
+    while True:
+        idade = get_int()
+        if(idade < 12 and idade > 110):
+            print("Digite uma idade valida")
+            continue
+        return idade
+
+def get_data(mensagem):
+    dia = 0
+    mes = 0
+    while True:
+        dia = get_int()
+        if(dia < 1 and dia > 31):
+            print("Digite uma idade valida")
+            continue
+        break
+    while True: 
+        mes = get_int()
+        if(mes < 1 and mes > 12):
+            print ("Digite um dia valido")
+            continue
+        break
+    return str(dia + "/" + mes)
+        
+        

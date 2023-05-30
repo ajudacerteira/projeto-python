@@ -1,6 +1,7 @@
-from functions import get_int, get_email
+from functions import get_int, get_email, get_data
 from models import ONG, Usuario, Evento
 
+# Create
 def create_ong():
     id = get_int("Digite o ID da ONG: ")
     nome = input("Digite o nome da ONG: ")
@@ -16,3 +17,12 @@ def create_usuario():
     idade = get_int("Digite a idade do Usuario: ")
     usuario = Usuario(id, nome, email, idade)
     return usuario
+
+def create_evento():
+    id = get_int("Digite o ID do Evento: ")
+    nome = input("Digite o nome do Evento: ")
+    endereco = input("Digite o endereco do Evento: ")
+    horario = str(get_int("Digite o horario do evento: ")) + "h"
+    data = get_data("Digite a data do Evento: ")
+    evento = Evento(id, nome, endereco, horario, data)
+    return evento
