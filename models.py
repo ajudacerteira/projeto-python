@@ -14,7 +14,7 @@ class Usuario:
         self.idade = idade
 
 class Evento:
-    def __init__(self, id, ong, nome, endereco, horario, data):
+    def __init__(self, id, nome, ong, endereco, horario, data):
         self.id = id
         self.nome = nome
         self.ong = ong

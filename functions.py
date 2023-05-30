@@ -3,7 +3,7 @@ def mostrar_menu():
     print("1 - Cadastrar nova ONG | 2- Cadastrar novo Usuario | 3- Cadastrar novo Evento")
     print("4 - Adicionar Usuario em Evento")
     print("5 - Listar ONGs | 6 - Listar Usuarios | 7 - Listar Eventos")
-    print("0 - Sair\n")
+    print("0 - Sair")
     try:
         option = int(input())
         return option
@@ -29,7 +29,7 @@ def get_int(mensagem):
 def get_idade(mensagem):
     while True:
         idade = get_int(mensagem)
-        if(idade < 12 and idade > 110):
+        if(idade < 12 or idade > 110):
             print("(Digite uma idade valida)")
             continue
         return idade
@@ -39,13 +39,13 @@ def get_data():
     mes = 0
     while True:
         dia = get_int("Digite o Dia do Evento: ")
-        if(dia < 1 and dia > 31):
+        if(dia < 1 or dia > 31):
             print("(Digite um dia valida)")
             continue
         break
     while True: 
         mes = get_int("Digite o Mês do Evento: ")
-        if(mes < 1 and mes > 12):
+        if(mes < 1 or mes > 12):
             print ("(Digite um mês valido)")
             continue
         break

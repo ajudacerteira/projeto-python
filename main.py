@@ -15,10 +15,11 @@ while True:
         usuarios[usuario.id] = usuario
     elif opcao == 3:
         ong = get_ong(ongs)
-        create_evento(ong)
+        evento = create_evento(ong)
+        eventos[evento.id] = evento
     elif opcao == 4:
-        evento = get_evento()
-        usuario = get_usuario()
+        evento = get_evento(eventos)
+        usuario = get_usuario(usuarios)
         adicionar_usuario(usuario, evento)
     elif opcao == 5:
         listar_ongs(ongs)
