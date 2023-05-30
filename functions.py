@@ -1,10 +1,9 @@
 def mostrar_menu():
-    print("Selecione uma das opções")
-    print("1 - Cadastrar ONG")
-    print("2 - Cadastrar Usuario")
-    print("3 - Cadastrar Evento")
+    print("Selecione uma Opção")
+    print("1 - Cadastrar nova ONG | 2- Cadastrar novo Usuario | 3- Cadastrar novo Evento")
+    print("4 - Adicionar Usuario em Evento")
+    print("5 - Listar ONGs | 6 - Listar Usuarios | 7 - Listar Eventos")
     print("0 - Sair")
-
     try:
         option = int(input())
         return option
@@ -15,9 +14,7 @@ def get_email(mensagem):
     while True:
         email = input(mensagem)
         if(email.__contains__("@") and email.__contains__(".com")):
-            return email
-
-         
+            return email         
 
 def get_int(mensagem):
     while True:
@@ -52,5 +49,3 @@ def get_data(mensagem):
             continue
         break
     return str(dia + "/" + mes)
-        
-        

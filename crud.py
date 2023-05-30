@@ -18,11 +18,28 @@ def create_usuario():
     usuario = Usuario(id, nome, email, idade)
     return usuario
 
-def create_evento():
+def create_evento(ong):
     id = get_int("Digite o ID do Evento: ")
     nome = input("Digite o nome do Evento: ")
     endereco = input("Digite o endereco do Evento: ")
     horario = str(get_int("Digite o horario do evento: ")) + "h"
     data = get_data("Digite a data do Evento: ")
-    evento = Evento(id, nome, endereco, horario, data)
+    evento = Evento(id, nome, ong, endereco, horario, data)
     return evento
+
+def adicionar_usuario(usuario, evento):
+    evento.usuarios.append(usuario)
+
+def listar_ong(ong):
+    print(f"ONG -> {ong.id} | Nome: {ong.nome} | Email: {ong.email} | Descricao: {ong.descricao}")
+
+def listar_ongs(ongs):
+    for ong in ongs.items():
+        listar_ong(ong)
+    
+def listar_usuario(usuario):
+    print(f"USUARIO -> {usuario.id} | Nome: {usuario.nome} | Email: {usuario.email} | Idade: {usuario.idade}")
+
+def listar_usuarios(usuarios):
+    for usuario in usuarios.items():
+        listar_usuario(usuario)
