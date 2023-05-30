@@ -1,4 +1,4 @@
-from functions import get_int, get_email, get_data
+from functions import get_int, get_email, get_data, get_string, get_idade
 from models import ONG, Usuario, Evento
 
 # FUNÇÕES DE CRIAÇÃO:
@@ -6,26 +6,26 @@ from models import ONG, Usuario, Evento
 # Função para criar uma ONG
 def create_ong():
     id = get_int("\nDigite o ID da ONG: ")
-    nome = input("Digite o nome da ONG: ")
+    nome = get_string("Digite o nome da ONG: ")
     email = get_email("Digite o email da ONG: ")
-    descricao = input("Descreva a ONG: ")
+    descricao = get_string("Descreva a ONG: ")
     ong = ONG(id, nome, email, descricao)
     return ong 
 
 # Função para criar um Usuario
 def create_usuario():
     id = get_int("\nDigite o ID do Usuario: ")
-    nome = input("Digite o nome do Usuario: ")
+    nome = get_string("Digite o nome do Usuario: ")
     email = get_email("Digite o email do Usuario: ")
-    idade = get_int("Digite a idade do Usuario: ")
+    idade = get_idade("Digite a idade do Usuario: ")
     usuario = Usuario(id, nome, email, idade)
     return usuario
 
 # Função para criar um Evento (lista de usuarios começa vazia)
 def create_evento(ong):
     id = get_int("\nDigite o ID do Evento: ")
-    nome = input("Digite o nome do Evento: ")
-    endereco = input("Digite o endereco do Evento: ")
+    nome = get_string("Digite o nome do Evento: ")
+    endereco = get_string("Digite o endereco do Evento: ")
     horario = str(get_int("Digite o horario do evento: ")) + "h"
     data = get_data()
     evento = Evento(id, nome, ong, endereco, horario, data)

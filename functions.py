@@ -29,6 +29,14 @@ def get_int(mensagem):
         except ValueError:
             print("(Digite um número inteiro)")
 
+# Validar string Inputado pelo Usuario
+def get_string(mensagem):
+    while True:
+        string = input(mensagem)
+        if(string == "" or string == " "):         
+            print("(Digite corretamente)")  
+        return string
+
 # Validar idade Inputada pelo Usuario
 def get_idade(mensagem):
     while True:
