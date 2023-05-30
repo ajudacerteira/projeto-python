@@ -20,7 +20,7 @@ while True:
     elif opcao == 4:
         evento = get_evento(eventos)
         usuario = get_usuario(usuarios)
-        adicionar_usuario(usuario, evento)
+        evento.usuarios.append(usuario)
     elif opcao == 5:
         listar_ongs(ongs)
     elif opcao == 6:
