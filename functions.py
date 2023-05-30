@@ -1,3 +1,4 @@
+# Mostra as Opções do Menu e valida opção inexistente
 def mostrar_menu():
     print("\nSelecione uma Opção")
     print("1 - Cadastrar nova ONG | 2- Cadastrar novo Usuario | 3- Cadastrar novo Evento")
@@ -10,6 +11,7 @@ def mostrar_menu():
     except ValueError:
         print("(Digite um opção válida)")
 
+# Validar email Inputado pelo Usuario
 def get_email(mensagem):
     while True:
         email = input(mensagem)
@@ -17,6 +19,7 @@ def get_email(mensagem):
             return email         
         print("(Email deve conter @ e .com)")
 
+# Validar numero Inputado pelo Usuario
 def get_int(mensagem):
     while True:
         try:
@@ -26,6 +29,7 @@ def get_int(mensagem):
         except ValueError:
             print("(Digite um número inteiro)")
 
+# Validar idade Inputada pelo Usuario
 def get_idade(mensagem):
     while True:
         idade = get_int(mensagem)
@@ -34,6 +38,7 @@ def get_idade(mensagem):
             continue
         return idade
 
+# Validar data Inputada pelo Usuario
 def get_data():
     dia = 0
     mes = 0
