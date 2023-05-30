@@ -14,9 +14,19 @@ while True:
         usuario = create_usuario()
         usuarios[usuario.id] = usuario
     elif opcao == 3:
-        ong = get_ong
+        ong = get_ong(ongs)
         create_evento(ong)
+    elif opcao == 4:
+        evento = get_evento()
+        usuario = get_usuario()
+        adicionar_usuario(usuario, evento)
+    elif opcao == 5:
+        listar_ongs(ongs)
+    elif opcao == 6:
+        listar_usuarios(usuarios)
+    elif opcao == 7:
+        listar_eventos(eventos)  
     elif opcao == 0:
-        break
+        break         
     else:
         print("Opção inválida!")

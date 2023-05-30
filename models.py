@@ -14,12 +14,11 @@ class Usuario:
         self.idade = idade
 
 class Evento:
-    def __init__(self, id, ong, nome, endereco, horario, data, descricao):
+    def __init__(self, id, ong, nome, endereco, horario, data):
         self.id = id
         self.nome = nome
         self.ong = ong
         self.endereco = endereco
         self.horario = horario
         self.data = data
-        self.descricao = descricao
         self.usuarios = []
