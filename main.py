@@ -26,6 +26,9 @@ while True:
             continue
         evento = get_evento(eventos)
         usuario = get_usuario(usuarios)
+        contribuicao = create_contribuicao(usuario)
+        if contribuicao is not None:
+            usuario.adicionar_contribuicao(evento, contribuicao)
         evento.usuarios.append(usuario)
     elif opcao == 5: # Listar ONGS
         listar_ongs(ongs)
