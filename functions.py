@@ -15,7 +15,7 @@ def mostrar_menu():
 def get_email(mensagem):
     while True:
         email = input(mensagem)
-        if(email.__contains__("@") and email.__contains__(".com")):
+        if("@" in email):
             return email         
         print("(Email deve conter @ e .com)")
 
