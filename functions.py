@@ -10,6 +10,14 @@ def mostrar_menu():
         return option
     except ValueError:
         print("(Digite um opção válida)")
+        
+# Validar string Inputado pelo Usuario
+def get_string(mensagem):
+    while True:
+        string = input(mensagem)
+        if(string == "" or string == " "):         
+            print("(Digite corretamente)")  
+        return string
 
 # Validar email Inputado pelo Usuario
 def get_email(mensagem):
@@ -29,13 +37,6 @@ def get_int(mensagem):
         except ValueError:
             print("(Digite um número inteiro)")
 
-# Validar string Inputado pelo Usuario
-def get_string(mensagem):
-    while True:
-        string = input(mensagem)
-        if(string == "" or string == " "):         
-            print("(Digite corretamente)")  
-        return string
 
 # Validar idade Inputada pelo Usuario
 def get_idade(mensagem):
