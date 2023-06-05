@@ -35,7 +35,7 @@ while True:
     elif opcao == 6: # Listar Usuarios
         listar_usuarios(usuarios)
     elif opcao == 7: # Listar Eventos
-        listar_eventos(eventos)  
+        listar_eventos_contribuicoes(eventos)  
     elif opcao == 0:
         break # Sair      
     else:

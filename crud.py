@@ -59,6 +59,9 @@ def listar_contribuicao(contribuicao):
 
 def listar_evento(evento):
     print(f"EVENTO -> {evento.id} | Nome: {evento.nome} | ONG: {evento.ong.nome} | Endereco: {evento.endereco} | Horario: {evento.horario} | Data: {evento.data}") 
+
+def listar_evento_contribuicoes(evento):
+    print(f"EVENTO -> {evento.id} | Nome: {evento.nome} | ONG: {evento.ong.nome} | Endereco: {evento.endereco} | Horario: {evento.horario} | Data: {evento.data}") 
     if evento.usuarios is not None:
         for usuario in evento.usuarios:
             listar_usuario(usuario)    
@@ -76,6 +79,11 @@ def listar_usuarios(usuarios):
     for usuario_id, usuario in usuarios.items():
         listar_usuario(usuario)
  
+
+def listar_eventos_contribuicoes(eventos):
+    print("")
+    for evento_id, evento in eventos.items():
+        listar_evento(evento)
 
 def listar_eventos(eventos):
     print("")
