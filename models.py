@@ -42,7 +42,7 @@ class Evento:
             item = get_string(f"\nCom qual insumo o {usuario.nome} contribuiu?\n")
             quantidade = get_int(f"\nQual foi a quantidade em KG deste item?\n")
             contribuicao = Contribuicao(item, quantidade)
-            contribuicoes.append(Contribuicao(item, quantidade))
+            contribuicoes.append(contribuicao)
             opcao = get_int(f"\nO {usuario.nome} deseja fazer alguma outra contribuição?\n1- Sim | (Outro Numero)- Não\n")
             if(opcao == 1):
                 continue
