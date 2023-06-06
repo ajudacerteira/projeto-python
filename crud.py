@@ -34,17 +34,17 @@ def create_evento(ong):
 # FUNÇÕES PARA LISTAR INFORMAÇÕES DE UMA INTANCIA:
 
 def listar_ong(ong):
-    print(f"\nONG -> {ong.id} | Nome: {ong.nome} | Email: {ong.email} | Descricao: {ong.descricao}")
+    print(f"\n(ONG -> {ong.id} | Nome: {ong.nome} | Email: {ong.email} | Descricao: {ong.descricao})")
 
 def listar_usuario(usuario):
-    print(f"\nUSUARIO -> {usuario.id} | Nome: {usuario.nome} | Email: {usuario.email} | Idade: {usuario.idade}")
+    print(f"\n(USUARIO -> {usuario.id} | Nome: {usuario.nome} | Email: {usuario.email} | Idade: {usuario.idade})")
 
 def listar_contribuicoes(contribuicoes):
     for contribuicao in contribuicoes:
-        print(f"CONTRIBUICAO -> Item: {contribuicao.item} | Quantidade em KG: {contribuicao.quantidade}")
+        print(f"<CONTRIBUICAO -> Item: {contribuicao.item} | Quantidade em KG: {contribuicao.quantidade}>")
 
 def listar_evento(evento):
-    print(f"\nEVENTO -> {evento.id} | Nome: {evento.nome} | ONG: {evento.ong.nome} | Endereco: {evento.endereco} | Horario: {evento.horario} | Data: {evento.data}") 
+    print(f"\n[EVENTO -> {evento.id} | Nome: {evento.nome} | ONG: {evento.ong.nome} | Endereco: {evento.endereco} | Horario: {evento.horario} | Data: {evento.data}]") 
 
 # FUNÇÕES PARA LISTAR INFOMAÇÕES DE VARIAS INSTÂNCIAS: 
 
@@ -65,7 +65,8 @@ def listar_eventos_contribuicoes(eventos):
         listar_evento(evento)
         for usuario in evento.usuarios:
             listar_usuario(usuario)
-            listar_contribuicoes(evento.contribuicoes[usuario])
+            if evento.contribuicoes.get(usuario):
+                listar_contribuicoes(evento.contribuicoes[usuario])
 
 # FUNÇÕES QUE RETORNAM UMA INSTANCIA ESPECIFICA EM DICIONARIO
 
