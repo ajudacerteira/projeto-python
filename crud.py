@@ -65,7 +65,7 @@ def listar_eventos_contribuicoes(eventos):
         listar_evento(evento)
         for usuario in evento.usuarios:
             listar_usuario(usuario)
-            listar_contribuicoes(usuario.contribuicoes[evento])
+            listar_contribuicoes(evento.contribuicoes[usuario])
 
 # FUNÇÕES QUE RETORNAM UMA INSTANCIA ESPECIFICA EM DICIONARIO
 

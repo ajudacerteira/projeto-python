@@ -17,30 +17,7 @@ class Usuario:
         self.idade = idade
         self.contribuicoes = {}
         
-    def adicionar_contribuicoes(self, evento):
-        opcao = get_int(f"\nO Usuario {self.nome} vai contribuir com este evento?\n1- Sim | 2- Não\n")
-        contribuicoes = []
-        if(opcao == 1):
-            while True:
-                item = get_string(f"Com qual insumo o {self.nome} contribuiu?\n")
-                quantidade = get_int(f"Qual foi a quantidade em KG deste item?\n")
-                contribuicao = Contribuicao(item, quantidade)
-                contribuicoes.append(contribuicao)
-                opcao = get_int(f"O {self.nome} deseja fazer alguma outra contribuição?\n1- Sim | 2- Não\n")
-                if(opcao == 1):
-                    continue
-                elif(opcao == 2):
-                    break
-                else:
-                    print("\n(Digite 1 ou 2)")
-            self.contribuicoes[evento] = contribuicoes
-        elif(opcao == 2):
-            print(f"\nEntendido, o {self.nome} comparecerá ao envento mas sem contribuir.")
-            contribuicao = Contribuicao("(nada)", "(nada)")
-            contribuicoes.append(contribuicao)
-            self.contribuicoes[evento] = contribuicoes
-        else:
-            print("\n(Digite 1 ou 2)")
+    
 
 class Contribuicao:
     def __init__(self, item, quantidade):
@@ -57,3 +34,29 @@ class Evento:
         self.horario = horario
         self.data = data
         self.usuarios = []
+        self.contribuicoes = {}
+
+    def adicionar_contribuicoes(self, usuario):
+        opcao = get_int(f"\nO Usuario {usuario.nome} vai contribuir com este evento?\n1- Sim | 2- Não\n")
+        contribuicoes = []
+        if(opcao == 1):
+            while True:
+                item = get_string(f"\nCom qual insumo o {usuario.nome} contribuiu?\n")
+                quantidade = get_int(f"\nQual foi a quantidade em KG deste item?\n")
+                contribuicao = Contribuicao(item, quantidade)
+                contribuicoes.append(contribuicao)
+                opcao = get_int(f"\nO {usuario.nome} deseja fazer alguma outra contribuição?\n1- Sim | 2- Não\n")
+                if(opcao == 1):
+                    continue
+                elif(opcao == 2):
+                    break
+                else:
+                    print("\n(Digite 1 ou 2)")
+            self.contribuicoes[usuario] = contribuicoes
+        elif(opcao == 2):
+            print(f"\nEntendido, o {self.nome} comparecerá ao envento mas sem contribuir.")
+            contribuicao = Contribuicao("(nada)", "(nada)")
+            contribuicoes.append(contribuicao)
+            self.contribuicoes[usuario] = contribuicoes
+        else:
+            print("\n(Digite 1 ou 2)")

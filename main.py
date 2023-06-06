@@ -26,10 +26,10 @@ while True:
             continue
         evento = get_evento(eventos)
         usuario = get_usuario(usuarios)
-        if(evento in usuario.contribuicoes):
+        if(usuario in evento.usuarios):
             print(f"\n({usuario.nome} já compareceu neste evento)")
             continue
-        usuario.adicionar_contribuicoes(evento)
+        evento.adicionar_contribuicoes(usuario)
         evento.usuarios.append(usuario)
     elif opcao == 5: # Listar ONGS
         listar_ongs(ongs)
