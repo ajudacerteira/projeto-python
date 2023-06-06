@@ -16,7 +16,8 @@ def get_string(mensagem):
     while True:
         string = input(mensagem)
         if(string == "" or string == " "):         
-            print("(Digite corretamente)")  
+            print("(Valor não pode ser nulo)") 
+            continue 
         return string
 
 # Validar email Inputado pelo Usuario
@@ -43,7 +44,7 @@ def get_idade(mensagem):
     while True:
         idade = get_int(mensagem)
         if(idade < 12 or idade > 110):
-            print("(Digite uma idade valida)")
+            print("(Digite uma idade entre 12 e 110)")
             continue
         return idade
 
@@ -54,14 +55,13 @@ def get_data():
     while True:
         dia = get_int("Digite o Dia do Evento: ")
         if(dia < 1 or dia > 31):
-            print("(Digite um dia valida)")
+            print("(Digite um dia entre 1 e 31)")
             continue
         break
     while True: 
         mes = get_int("Digite o Mês do Evento: ")
         if(mes < 1 or mes > 12):
-            print ("(Digite um mês valido)")
+            print ("(Digite um mês entre 1 e 12)")
             continue
         break
-    
     return str(str(dia) + "/" + str(mes))

@@ -32,7 +32,7 @@ class Usuario:
                 elif(opcao == 2):
                     break
                 else:
-                    print("(Digite 1 ou 2)")
+                    print("\n(Digite 1 ou 2)")
             self.contribuicoes[evento] = contribuicoes
         elif(opcao == 2):
             print(f"\nEntendido, o {self.nome} comparecerá ao envento mas sem contribuir.")
@@ -40,7 +40,7 @@ class Usuario:
             contribuicoes.append(contribuicao)
             self.contribuicoes[evento] = contribuicoes
         else:
-            print("(Digite 1 ou 2)")
+            print("\n(Digite 1 ou 2)")
 
 class Contribuicao:
     def __init__(self, item, quantidade):
