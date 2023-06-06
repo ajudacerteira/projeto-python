@@ -17,8 +17,6 @@ class Usuario:
         self.idade = idade
         self.contribuicoes = {}
         
-    
-
 class Contribuicao:
     def __init__(self, item, quantidade):
         self.item = item
