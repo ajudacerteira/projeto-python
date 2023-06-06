@@ -26,4 +26,3 @@ Pensando nisso, o nosso projeto vem pra ser uma plataforma digital onde ONGs se 
 ## Instruções de Uso
 
 Execute o arquivo main.py
-

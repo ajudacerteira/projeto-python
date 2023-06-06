@@ -25,7 +25,7 @@ def get_email(mensagem):
         email = input(mensagem)
         if("@" in email):
             return email         
-        print("(Email deve conter @ e .com)")
+        print("(Email deve conter @)")
 
 # Validar numero Inputado pelo Usuario
 def get_int(mensagem):

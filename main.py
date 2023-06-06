@@ -26,9 +26,10 @@ while True:
             continue
         evento = get_evento(eventos)
         usuario = get_usuario(usuarios)
-        contribuicao = create_contribuicao(usuario)
-        if contribuicao is not None:
-            usuario.adicionar_contribuicao(evento, contribuicao)
+        if(evento in usuario.contribuicoes):
+            print(f"\n({usuario.nome} já compareceu neste evento)")
+            continue
+        usuario.adicionar_contribuicoes(evento)
         evento.usuarios.append(usuario)
     elif opcao == 5: # Listar ONGS
         listar_ongs(ongs)
@@ -39,4 +40,4 @@ while True:
     elif opcao == 0:
         break # Sair      
     else:
-        print("Opção inválida!")
+        print("\n(Opção inválida)")
